@@ -1,0 +1,93 @@
+{
+    "language": {
+        "de": {
+            "start_emergency": "Gibt es einen Notfall?",
+            "consciousness": "Ist jemand bewusstlos und/oder antwortet nicht mehr auf Ansprache?",
+            "breathing": "Atmet die bewusstlose Person noch?",
+            "consciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?",
+            "es_called": "Wurde bereits der Rettungsdienst gerufen?",
+            "yes": "Ja",
+            "no": "Nein",
+            "es_call_request": "Bitte rufen Sie sofort den Rettungsdienst unter der 112 an!",
+            "single": "Eine Person",
+            "multiple": "Mehrere Personen",
+            "airway": "Prüfe ob die Atemwege der Person frei sind?",
+            "stable_position": "Bringe die Person in die stabile Seitenlage.",
+            "initiate_cpr": "Beginne mit der Herz-Lungen-Wiederbelebung.",
+            "other_people_conscious": "Gibt es noch andere Personen, die betroffen und nicht bewusstlos sind?",
+            "calming_statement": "Bleib ruhig, beruhige die Anwesenden und warte auf Hilfe."
+        }
+    },
+    "en": {
+        "start_emergency": "Are you in an emergency situation?",
+        "consciousness": "Is someone unconscious and/or not responding to calls?",
+        "breating": "Is the unconscious person still breathing?",
+        "consciousness_number": "How many people are unconscious and/or not responding to calls?",
+        "es_called": "Did someone call emergency services already?",
+        "yes": "Yes",
+        "no": "No",
+        "es_call_request": "Please immediately call emergency services under 112!"
+    },
+    "questions": {
+        "start_emergency": {
+            "txt_id": "start_emergency",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "consciousness",
+                    "class": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "end",
+                    "class": "negative"
+                }
+            ]
+        },
+        "consciousness": {
+            "txt_id": "consciousness",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "es_called_unconscious",
+                    "class": "neutral"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "urgency_info",
+                    "class": "neutral"
+                }
+            ]
+        },
+        "es_called_unconscious": {
+            "txt_id": "es_called_unconscious",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "unconsciousness_number",
+                    "class": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "es_call_request",
+                    "class": "negative"
+                }
+            ]
+        },
+        "es_call_request": {
+            "txt_id": "es_call_request",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "unconsciousness_number",
+                    "class": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "end",
+                    "class": "negative"
+                }
+            ]
+        }
+    }
+}
