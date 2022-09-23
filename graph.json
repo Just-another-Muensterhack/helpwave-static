@@ -15,7 +15,20 @@
             "stable_position": "Bringe die Person in die stabile Seitenlage.",
             "initiate_cpr": "Beginne mit der Herz-Lungen-Wiederbelebung.",
             "other_people_conscious": "Gibt es noch andere Personen, die betroffen und nicht bewusstlos sind?",
-            "calming_statement": "Bleib ruhig, beruhige die Anwesenden und warte auf Hilfe."
+            "calming_statement": "Bleib ruhig, beruhige die Anwesenden und warte auf Hilfe.",
+            "urgency_info": "Wenn du den Eindruck hast, dass jemand ernsthaft verletzt oder krank ist, oder starke Schmerzen hat, rufe sofort den Rettungsdienst unter der 112 an.",
+            "situation": "Was ist passiert?",
+            "accident": "Es gab einen Unfall.",
+            "sickness": "Es geht jemandem nicht gut.",
+            "number_affected": "Wie viele Personen sind betroffen?",
+            "me": "Ich",
+            "someone_else": "Jemand anderes",
+            "several_others": "Mehrere andere Personen",
+            "bleeding": "Blutet jemand sehr stark aus einer offenen Wunde?",
+            "bleeding_location": "Blut der Patient an den Extremitäten (Arme oder Beine) oder am Körperstamm (Bauch, Kopf, Hals, Brustkorb)?.",
+            "stop_bleeding_limb": "Stille die Blutung indem du den Arm oder das Bein über Herzhöhe lagerst und herznah abbindest.",
+            "stop_bleeding_trunk": "Stille die BLutung indem du ein Tuch oder Stoff auf die blutende Stelle drückst.",
+            "proceed": "Weiter"
         }
     },
     "en": {
@@ -28,7 +41,7 @@
         "no": "No",
         "es_call_request": "Please immediately call emergency services under 112!"
     },
-    "questions": {
+    "nodes": {
         "start_emergency": {
             "txt_id": "start_emergency",
             "responses": [
@@ -60,7 +73,7 @@
             ]
         },
         "es_called_unconscious": {
-            "txt_id": "es_called_unconscious",
+            "txt_id": "es_called",
             "responses": [
                 {
                     "txt_id": "yes",
@@ -88,6 +101,137 @@
                     "class": "negative"
                 }
             ]
+        },
+        "unconsciousness_number": {
+            "txt_id": "unconsciousness_number",
+            "responses": [
+                {
+                    "txt_id": "single",
+                    "next": "airway",
+                    "class": "neutral"
+                },
+                {
+                    "txt_id": "multiple",
+                    "next": "airway",
+                    "class": "neutral"
+                }
+            ]
+        },
+        "airway": {
+            "txt_id": "airway",
+            "responses": [
+                {
+                    "txt_id": "proceed",
+                    "next": "breathing",
+                    "class": "positive"
+                }
+            ]
+        },
+        "breathing": {
+            "txt_id": "breathing",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "stable_position",
+                    "class": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "initiate_cpr",
+                    "class": "negative"
+                }
+            ]
+        },
+        "initiate_cpr": {
+            "txt_id": "initiate_cpr"
+        },
+        "stable_position": {
+            "txt_id": "stable_position",
+            "responses": [
+                {
+                    "txt_id": "proceed",
+                    "next": "other_people_conscious",
+                    "class": "positive"
+                }
+            ]
+        },
+        "other_people_conscious": {
+            "txt_id": "other_people_conscious",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "situation",
+                    "class": "neutral"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "calming_statement",
+                    "class": "neutral"
+                }
+            ]
+        },
+        "urgency_info": {
+            "txt_id": "urgency_info",
+            "responses": [
+                {
+                    "txt_id": "proceed",
+                    "next": "es_called_conscious",
+                    "class": "neutral"
+                }
+            ]
+        },
+        "es_called_conscious": {
+            "txt_id": "es_called",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "situation",
+                    "class": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "es_call_request",
+                    "class": "negative"
+                }
+            ]
+        },
+        "situation": {
+            "txt_id": "situation",
+            "responses": [
+                {
+                    "txt_id": "accident",
+                    "next": "number_affected",
+                    "class": "neutral"
+                },
+                {
+                    "txt_id": "sickness",
+                    "next": "number_affected",
+                    "class": "neutral"
+                }
+            ]
+        },
+        "number_affected": {
+            "txt_id": "number_affected",
+            "responses": [
+                {
+                    "txt_id": "me",
+                    "next": "calming_statement",
+                    "class": "neutral"
+                },
+                {
+                    "txt_id": "someone_else",
+                    "next": "calming_statement",
+                    "class": "neutral"
+                },
+                {
+                    "txt_id": "several_others",
+                    "next": "calming_statement",
+                    "class": "neutral"
+                }
+            ]
+        },
+        "calming_statement": {
+            "txt_id": "calming_statement"
         }
     }
 }
