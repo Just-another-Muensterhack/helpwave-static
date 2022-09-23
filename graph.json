@@ -30,7 +30,8 @@
             "stop_bleeding_limb": "Stille die Blutung indem du den Arm oder das Bein über Herzhöhe lagerst und herznah abbindest.",
             "stop_bleeding_trunk": "Stille die BLutung indem du ein Tuch oder Stoff auf die blutende Stelle drückst.",
             "proceed": "Weiter",
-            "unconsciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?"
+            "unconsciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?",
+            "unsure": "Ich bin mir nicht sicher."
         },
         "en": {
             "start_emergency": "Are you in an emergency situation?",
@@ -62,7 +63,8 @@
             "stop_bleeding_limb": "Stop the bleeding by elevating the affected arm or leg over heart level and binding it close to the heart.",
             "stop_bleeding_trunk": "Stop the bleeding by pressing a cloth or fabric on the bleeding area.",
             "proceed": "Proceed",
-            "unconsciousness_number": "How many people are unconscious and/or not responding to calls?"
+            "unconsciousness_number": "How many people are unconscious and/or not responding to calls?",
+            "unsure": "I'm not sure."
         }
     },
     "nodes": {
@@ -93,6 +95,11 @@
                     "txt_id": "no",
                     "next": "es_call_request_unconscious",
                     "connotation": "negative"
+                },
+                {
+                    "txt_id": "unsure",
+                    "next": "es_call_request_unconscious",
+                    "connotation": "neutral"
                 }
             ]
         },
@@ -191,6 +198,11 @@
                     "txt_id": "no",
                     "next": "es_call_request_conscious",
                     "connotation": "negative"
+                },
+                {
+                    "txt_id": "unsure",
+                    "next": "es_call_request_conscious",
+                    "connotation": "neutral"
                 }
             ]
         },
