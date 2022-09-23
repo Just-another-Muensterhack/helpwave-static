@@ -110,7 +110,8 @@
             ]
         },
         "es_call_request_unconscious": {
-            "txt_id": "es_call_request"
+            "txt_id": "es_call_request",
+            "responses": []
         },
         "unconsciousness_number": {
             "txt_id": "unconsciousness_number",
