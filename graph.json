@@ -25,7 +25,7 @@
             "someone_else": "Jemand anderes",
             "several_others": "Mehrere andere Personen",
             "bleeding": "Blutet jemand sehr stark aus einer offenen Wunde?",
-            "bleeding_location": "Blut der Patient an den Extremitäten (Arme oder Beine) oder am Körperstamm (Bauch, Kopf, Hals, Brustkorb)?.",
+            "bleeding_location": "Blutet der Patient an den Extremitäten (Arme oder Beine) oder am Körperstamm (Bauch, Kopf, Hals, Brustkorb)?.",
             "stop_bleeding_limb": "Stille die Blutung indem du den Arm oder das Bein über Herzhöhe lagerst und herznah abbindest.",
             "stop_bleeding_trunk": "Stille die BLutung indem du ein Tuch oder Stoff auf die blutende Stelle drückst.",
             "proceed": "Weiter"
@@ -39,7 +39,27 @@
         "es_called": "Did someone call emergency services already?",
         "yes": "Yes",
         "no": "No",
-        "es_call_request": "Please immediately call emergency services under 112!"
+        "es_call_request": "Please immediately call emergency services under 112!",
+        "single": "One person",
+        "multiple": "Multiple people",
+        "airway": "Check if the airways of the unconscious person are unobstructed?",
+        "stable_position": "Place the person in the stable lateral position.",
+        "initiate_cpr": "Start cardiopulmonary resuscitation.",
+        "other_people_conscious": "Are there other people who are affected and not unconscious?",
+        "calming_statement": "Stay calm, calm the people present and wait for help.",
+        "urgency_info": "If you have the impression that someone is seriously injured or sick, or has severe pain, call emergency services immediately under 112.",
+        "situation": "What happened?",
+        "accident": "There was an accident.",
+        "sickness": "Someone is not feeling well.",
+        "number_affected": "How many people are affected?",
+        "me": "Me",
+        "someone_else": "Someone else",
+        "several_others": "Several other people",
+        "bleeding": "Is someone bleeding very heavily from an open wound?",
+        "bleeding_location": "Is the patient bleeding from the extremities (arms or legs) or from the trunk (abdomen, head, neck, chest)?.",
+        "stop_bleeding_limb": "Stop the bleeding by elevating the affected arm or leg over heart level and binding it close to the heart.",
+        "stop_bleeding_trunk": "Stop the bleeding by pressing a cloth or fabric on the bleeding area.",
+        "proceed": "Proceed"
     },
     "nodes": {
         "start_emergency": {
