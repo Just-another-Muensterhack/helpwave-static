@@ -66,21 +66,6 @@
         }
     },
     "nodes": {
-        "start_emergency": {
-            "txt_id": "start_emergency",
-            "responses": [
-                {
-                    "txt_id": "yes",
-                    "next": "consciousness",
-                    "connotation": "positive"
-                },
-                {
-                    "txt_id": "no",
-                    "next": "end",
-                    "connotation": "negative"
-                }
-            ]
-        },
         "consciousness": {
             "txt_id": "consciousness",
             "responses": [
