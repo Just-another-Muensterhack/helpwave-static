@@ -1,0 +1,257 @@
+{
+    "language": {
+        "de": {
+            "start_emergency": "Gibt es einen Notfall?",
+            "consciousness": "Ist jemand bewusstlos und/oder antwortet nicht mehr auf Ansprache?",
+            "breathing": "Atmet die bewusstlose Person noch?",
+            "consciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?",
+            "es_called": "Wurde bereits der Rettungsdienst gerufen?",
+            "yes": "Ja",
+            "no": "Nein",
+            "es_call_request": "Bitte rufen Sie sofort den Rettungsdienst unter der 112 an!",
+            "single": "Eine Person",
+            "multiple": "Mehrere Personen",
+            "airway": "Prüfe ob die Atemwege der Person frei sind?",
+            "stable_position": "Bringe die Person in die stabile Seitenlage.",
+            "initiate_cpr": "Beginne mit der Herz-Lungen-Wiederbelebung.",
+            "other_people_conscious": "Gibt es noch andere Personen, die betroffen und nicht bewusstlos sind?",
+            "calming_statement": "Bleib ruhig, beruhige die Anwesenden und warte auf Hilfe.",
+            "urgency_info": "Wenn du den Eindruck hast, dass jemand ernsthaft verletzt oder krank ist, oder starke Schmerzen hat, rufe sofort den Rettungsdienst unter der 112 an.",
+            "situation": "Was ist passiert?",
+            "accident": "Es gab einen Unfall.",
+            "sickness": "Es geht jemandem nicht gut.",
+            "number_affected": "Wie viele Personen sind betroffen?",
+            "me": "Ich",
+            "someone_else": "Jemand anderes",
+            "several_others": "Mehrere andere Personen",
+            "bleeding": "Blutet jemand sehr stark aus einer offenen Wunde?",
+            "bleeding_location": "Blutet der Patient an den Extremitäten (Arme oder Beine) oder am Körperstamm (Bauch, Kopf, Hals, Brustkorb)?.",
+            "stop_bleeding_limb": "Stille die Blutung indem du den Arm oder das Bein über Herzhöhe lagerst und herznah abbindest.",
+            "stop_bleeding_trunk": "Stille die BLutung indem du ein Tuch oder Stoff auf die blutende Stelle drückst.",
+            "proceed": "Weiter"
+        },
+        "en": {
+            "start_emergency": "Are you in an emergency situation?",
+            "consciousness": "Is someone unconscious and/or not responding to calls?",
+            "breating": "Is the unconscious person still breathing?",
+            "consciousness_number": "How many people are unconscious and/or not responding to calls?",
+            "es_called": "Did someone call emergency services already?",
+            "yes": "Yes",
+            "no": "No",
+            "es_call_request": "Please immediately call emergency services under 112!",
+            "single": "One person",
+            "multiple": "Multiple people",
+            "airway": "Check if the airways of the unconscious person are unobstructed?",
+            "stable_position": "Place the person in the stable lateral position.",
+            "initiate_cpr": "Start cardiopulmonary resuscitation.",
+            "other_people_conscious": "Are there other people who are affected and not unconscious?",
+            "calming_statement": "Stay calm, calm the people present and wait for help.",
+            "urgency_info": "If you have the impression that someone is seriously injured or sick, or has severe pain, call emergency services immediately under 112.",
+            "situation": "What happened?",
+            "accident": "There was an accident.",
+            "sickness": "Someone is not feeling well.",
+            "number_affected": "How many people are affected?",
+            "me": "Me",
+            "someone_else": "Someone else",
+            "several_others": "Several other people",
+            "bleeding": "Is someone bleeding very heavily from an open wound?",
+            "bleeding_location": "Is the patient bleeding from the extremities (arms or legs) or from the trunk (abdomen, head, neck, chest)?.",
+            "stop_bleeding_limb": "Stop the bleeding by elevating the affected arm or leg over heart level and binding it close to the heart.",
+            "stop_bleeding_trunk": "Stop the bleeding by pressing a cloth or fabric on the bleeding area.",
+            "proceed": "Proceed"
+        }
+    },
+    "nodes": {
+        "start_emergency": {
+            "txt_id": "start_emergency",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "consciousness",
+                    "connotation": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "end",
+                    "connotation": "negative"
+                }
+            ]
+        },
+        "consciousness": {
+            "txt_id": "consciousness",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "es_called_unconscious",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "urgency_info",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "es_called_unconscious": {
+            "txt_id": "es_called",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "unconsciousness_number",
+                    "connotation": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "es_call_request",
+                    "connotation": "negative"
+                }
+            ]
+        },
+        "es_call_request": {
+            "txt_id": "es_call_request",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "unconsciousness_number",
+                    "connotation": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "end",
+                    "connotation": "negative"
+                }
+            ]
+        },
+        "unconsciousness_number": {
+            "txt_id": "unconsciousness_number",
+            "responses": [
+                {
+                    "txt_id": "single",
+                    "next": "airway",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "multiple",
+                    "next": "airway",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "airway": {
+            "txt_id": "airway",
+            "responses": [
+                {
+                    "txt_id": "proceed",
+                    "next": "breathing",
+                    "connotation": "positive"
+                }
+            ]
+        },
+        "breathing": {
+            "txt_id": "breathing",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "stable_position",
+                    "connotation": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "initiate_cpr",
+                    "connotation": "negative"
+                }
+            ]
+        },
+        "initiate_cpr": {
+            "txt_id": "initiate_cpr"
+        },
+        "stable_position": {
+            "txt_id": "stable_position",
+            "responses": [
+                {
+                    "txt_id": "proceed",
+                    "next": "other_people_conscious",
+                    "connotation": "positive"
+                }
+            ]
+        },
+        "other_people_conscious": {
+            "txt_id": "other_people_conscious",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "situation",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "calming_statement",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "urgency_info": {
+            "txt_id": "urgency_info",
+            "responses": [
+                {
+                    "txt_id": "proceed",
+                    "next": "es_called_conscious",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "es_called_conscious": {
+            "txt_id": "es_called",
+            "responses": [
+                {
+                    "txt_id": "yes",
+                    "next": "situation",
+                    "connotation": "positive"
+                },
+                {
+                    "txt_id": "no",
+                    "next": "es_call_request",
+                    "connotation": "negative"
+                }
+            ]
+        },
+        "situation": {
+            "txt_id": "situation",
+            "responses": [
+                {
+                    "txt_id": "accident",
+                    "next": "number_affected",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "sickness",
+                    "next": "number_affected",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "number_affected": {
+            "txt_id": "number_affected",
+            "responses": [
+                {
+                    "txt_id": "me",
+                    "next": "calming_statement",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "someone_else",
+                    "next": "calming_statement",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "several_others",
+                    "next": "calming_statement",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "calming_statement": {
+            "txt_id": "calming_statement"
+        }
+    }
+}
