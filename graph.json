@@ -154,7 +154,8 @@
             ]
         },
         "initiate_cpr": {
-            "txt_id": "initiate_cpr"
+            "txt_id": "initiate_cpr",
+            "responses": []
         },
         "stable_position": {
             "txt_id": "stable_position",
@@ -252,7 +253,8 @@
             ]
         },
         "calming_statement": {
-            "txt_id": "calming_statement"
+            "txt_id": "calming_statement",
+            "responses": []
         }
     }
 }
