@@ -28,7 +28,8 @@
             "bleeding_location": "Blutet der Patient an den Extremitäten (Arme oder Beine) oder am Körperstamm (Bauch, Kopf, Hals, Brustkorb)?.",
             "stop_bleeding_limb": "Stille die Blutung indem du den Arm oder das Bein über Herzhöhe lagerst und herznah abbindest.",
             "stop_bleeding_trunk": "Stille die BLutung indem du ein Tuch oder Stoff auf die blutende Stelle drückst.",
-            "proceed": "Weiter"
+            "proceed": "Weiter",
+            "unconsciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?"
         },
         "en": {
             "start_emergency": "Are you in an emergency situation?",
@@ -58,7 +59,8 @@
             "bleeding_location": "Is the patient bleeding from the extremities (arms or legs) or from the trunk (abdomen, head, neck, chest)?.",
             "stop_bleeding_limb": "Stop the bleeding by elevating the affected arm or leg over heart level and binding it close to the heart.",
             "stop_bleeding_trunk": "Stop the bleeding by pressing a cloth or fabric on the bleeding area.",
-            "proceed": "Proceed"
+            "proceed": "Proceed",
+            "unconsciousness_number": "How many people are unconscious and/or not responding to calls?"
         }
     },
     "nodes": {
@@ -102,25 +104,13 @@
                 },
                 {
                     "txt_id": "no",
-                    "next": "es_call_request",
+                    "next": "es_call_request_unconscious",
                     "connotation": "negative"
                 }
             ]
         },
-        "es_call_request": {
-            "txt_id": "es_call_request",
-            "responses": [
-                {
-                    "txt_id": "yes",
-                    "next": "unconsciousness_number",
-                    "connotation": "positive"
-                },
-                {
-                    "txt_id": "no",
-                    "next": "end",
-                    "connotation": "negative"
-                }
-            ]
+        "es_call_request_unconscious": {
+            "txt_id": "es_call_request"
         },
         "unconsciousness_number": {
             "txt_id": "unconsciousness_number",
@@ -210,8 +200,18 @@
                 },
                 {
                     "txt_id": "no",
-                    "next": "es_call_request",
+                    "next": "es_call_request_conscious",
                     "connotation": "negative"
+                }
+            ]
+        },
+        "es_call_request_conscious": {
+            "txt_id": "es_call_request",
+            "responses": [
+                {
+                    "txt_id": "proceed",
+                    "next": "situation",
+                    "connotation": "positive"
                 }
             ]
         },
