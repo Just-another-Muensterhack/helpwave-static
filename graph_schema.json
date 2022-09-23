@@ -1,31 +1,22 @@
 {
     "language": {
         "de": {
-            "questions": {
-                "question_name": "string"
-            },
-            "responses": {
-                "yes": "string",
-                "no": "string"
-            }
+            "node_id": "string"
         },
         "en": {
-            "questions": {
-                "question_name": "string"
-            },
-            "responses": {
-                "yes": "string",
-                "no": "string"
-            }
+            "node_id": "string"
         }
     },
-    "question_name": {
-        "question": "string",
-        "responses": {
-            "response_text": "string",
-            "next": "string", // next question name
-            "class": "string"
-        },
-        "class": "string"
+    "nodes": {
+        "node_id": {
+            "txt_id": "string",
+            "responses": [
+                {
+                    "txt_id": "string",
+                    "next": "string", // next node_id
+                    "class": "string"
+                }
+            ]
+        }
     }
 }
