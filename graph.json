@@ -357,6 +357,10 @@
             "txt_id": "calming_statement",
             "responses": []
         },
+        "calming_statement_self": {
+            "txt_id": "calming_statement_self",
+            "responses": []
+        },
         "something_changed": {
             "txt_id": "something_changed",
             "responses": [
