@@ -30,7 +30,7 @@
             "other_people_conscious_yes": "Es gibt andere Betroffene, die nicht bewusstlos sind",
             "other_people_conscious_no": "Es gibt keine anderen Betroffene, die nicht bewusstlos sind",
             "calming_statement": "Bleib ruhig, beruhige die Anwesenden und warte auf Hilfe.",
-            "calming_statement_self": "Bleib ruhig und warte auf Hilfe.",
+            "calming_statement_self": "Bleib ruhig, mache auf dich aufmerksam und warte auf Hilfe.",
             "urgency_info": "Wenn du den Eindruck hast, dass jemand ernsthaft verletzt oder krank ist, oder starke Schmerzen hat, rufe sofort den Rettungsdienst unter der 112 an.",
             "urgency_info_proceed": "Nutzer über Möglichkeit des Notrufs informiert",
             "situation": "Was ist passiert?",
@@ -89,7 +89,7 @@
             "other_people_conscious_yes": "There are other people who are affected and not unconscious",
             "other_people_conscious_no": "There are not other people who are affected and not unconscious",
             "calming_statement": "Stay calm, calm the people present and wait for help.",
-            "calming_statement_self": "Stay calm and wait for help.",
+            "calming_statement_self": "Stay calm, make yourself notable and wait for help.",
             "urgency_info": "If you have the impression that someone is seriously injured or sick, or has severe pain, call emergency services immediately under 112.",
             "urgency_info_proceed": "User was informed they can call emergency services",
             "situation": "What happened?",
@@ -355,11 +355,13 @@
         },
         "calming_statement": {
             "txt_id": "calming_statement",
-            "responses": []
+            "responses": [],
+            "end": true
         },
         "calming_statement_self": {
             "txt_id": "calming_statement_self",
-            "responses": []
+            "responses": [],
+            "end": true
         },
         "something_changed": {
             "txt_id": "something_changed",
