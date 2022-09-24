@@ -57,7 +57,20 @@
             "something_changed": "Was hat sich geändert?",
             "sudden_stop_breathing": "Eine bewusstlose Person hat aufgehört zu atmen.",
             "gain_consciousness": "Jemand ist wieder bei Bewusstsein",
-            "another_person": "Eine weitere Person hat ein Problem"
+            "another_person": "Eine weitere Person hat ein Problem",
+            "help_needed": "Ich brauche Hilfe",
+            "what_happened": "Was ist passiert?",
+            "injury": "Jemand ist verletzt",
+            "localisation": "Wo liegt das Problem?",
+            "head_neck": "Kopf/Hals",
+            "chest": "Brustkorb",
+            "abdomen": "Bauch",
+            "limbs": "Arm/Bein",
+            "hand_foot": "Hände/Füße",
+            "affected_person": "Wer ist betroffen?",
+            "adult": "Erwachsen",
+            "child": "Kind",
+            "pregnant": "Schwanger"
         },
         "en": {
             "start_emergency": "Are you in an emergency situation?",
@@ -116,7 +129,20 @@
             "something_changed": "What has changed?",
             "sudden_stop_breathing": "An unconscious person stopped breathing.",
             "gain_consciousness": "Someone has regained consciousness.",
-            "another_person": "Another person has a problem."
+            "another_person": "Another person has a problem.",
+            "help_needed": "I need help.",
+            "what_happened": "What happened?",
+            "injury": "Someone is injured.",
+            "localisation": "Where is the problem?",
+            "head_neck": "Head/Neck",
+            "chest": "Chest",
+            "abdomen": "Abdomen",
+            "limbs": "Arm/Leg",
+            "hand_foot": "Hands/Feet",
+            "affected_person": "Who is affected?",
+            "adult": "Adult",
+            "child": "Child",
+            "pregnant": "Pregnant Person"
         }
     },
     "nodes": {
@@ -397,6 +423,76 @@
                     "state_changes": {
                         "no_affected": true
                     }
+                }
+            ]
+        },
+        "what_happened": {
+            "txt_id": "what_happened",
+            "responses": [
+                {
+                    "txt_id": "injury",
+                    "next": "localisation",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "sickness",
+                    "next": "localisation",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "localisation": {
+            "txt_id": "localisation",
+            "responses": [
+                {
+                    "txt_id": "head",
+                    "next": "affected_person",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "chest",
+                    "next": "affected_person",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "abdomen",
+                    "next": "affected_person",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "arm",
+                    "next": "affected_person",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "leg",
+                    "next": "affected_person",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "other",
+                    "next": "affected_person",
+                    "connotation": "neutral"
+                }
+            ]
+        },
+        "affected_person": {
+            "txt_id": "affected_person",
+            "responses": [
+                {
+                    "txt_id": "adult",
+                    "next": "recommendation",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "child",
+                    "next": "recommendation",
+                    "connotation": "neutral"
+                },
+                {
+                    "txt_id": "pregnant",
+                    "next": "recommendation",
+                    "connotation": "neutral"
                 }
             ]
         }
