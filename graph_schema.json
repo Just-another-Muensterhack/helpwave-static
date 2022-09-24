@@ -14,7 +14,8 @@
                 {
                     "txt_id": "string",
                     "next": "string", // next node_id
-                    "class": "string"
+                    "class": "string",
+                    "hint": "string"
                 }
             ]
         }
