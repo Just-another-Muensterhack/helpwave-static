@@ -3,25 +3,45 @@
         "de": {
             "start_emergency": "Gibt es einen Notfall?",
             "consciousness": "Ist jemand bewusstlos und/oder antwortet nicht mehr auf Ansprache?",
+            "consciousness_yes": "Jemand ist bewusstlos und/oder antwortet nicht mehr auf Ansprache",
+            "consciousness_no": "Niemand ist bewusstlos oder antwortet nicht mehr auf Ansprache",
             "breathing": "Atmet die bewusstlose Person noch?",
+            "breathing_yes": "Die bewusstlose Person atmet noch",
+            "breathing_no": "Die bewusstlose Person atmet nicht!",
             "consciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?",
+            "consciousness_number_single": "Nur eine Person ist bewusstlos und/oder antworten nicht mehr auf Ansprache",
+            "consciousness_number_multiple": "Mehrere Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache",
             "es_called": "Wurde bereits der Rettungsdienst gerufen?",
+            "es_called_yes": "Rettungsdienst ist informiert",
+            "es_called_no": "Rettungsdienst war noch nicht informiert",
+            "es_called_unsure": "Nicht sicher, ob Rettungsdienst informiert",
             "yes": "Ja",
             "no": "Nein",
             "es_call_request": "Bitte rufe sofort den Rettungsdienst unter der 112 an!",
+            "es_call_request_proceed": "Nutzer wurde aufgefordert 112 zu wählen",
             "single": "Eine Person",
             "multiple": "Mehrere Personen",
             "airway": "Prüfe ob die Atemwege der Person frei sind?",
+            "airway_proceed": "Atemwege der Person scheinen frei",
             "stable_position": "Bringe die Person in die stabile Seitenlage.",
+            "stable_position_proceed": "Person ist in stabiler Seitenlage",
             "initiate_cpr": "Beginne mit der Herz-Lungen-Wiederbelebung.",
             "other_people_conscious": "Gibt es noch andere Personen, die betroffen und nicht bewusstlos sind?",
+            "other_people_conscious_yes": "Es gibt andere Betroffene, die nicht bewusstlos sind",
+            "other_people_conscious_no": "Es gibt keine anderen Betroffene, die nicht bewusstlos sind",
             "calming_statement": "Bleib ruhig, beruhige die Anwesenden und warte auf Hilfe.",
             "calming_statement_self": "Bleib ruhig und warte auf Hilfe.",
             "urgency_info": "Wenn du den Eindruck hast, dass jemand ernsthaft verletzt oder krank ist, oder starke Schmerzen hat, rufe sofort den Rettungsdienst unter der 112 an.",
+            "urgency_info_proceed": "Nutzer über Möglichkeit des Notrufs informiert",
             "situation": "Was ist passiert?",
+            "situation_accident": "Es gab einen Unfall",
+            "situation_sickness": "Es scheint jemandem nicht gut zu gehen",
             "accident": "Es gab einen Unfall.",
             "sickness": "Es geht jemandem nicht gut.",
             "number_affected": "Wie viele Personen sind betroffen?",
+            "number_affected_me": "Nur Nutzer betroffen",
+            "number_affected_someone_else": "Eine andere Person ist betroffen",
+            "number_affected_several": "Mehrere Personen sind betroffen",
             "me": "Ich",
             "someone_else": "Jemand anderes",
             "several_others": "Mehrere andere Personen",
@@ -32,7 +52,8 @@
             "proceed": "Weiter",
             "unconsciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?",
             "unsure": "Ich bin mir nicht sicher.",
-            "sudden_loc": "Jemand hat das Bewusstsein verloren."
+            "sudden_loc": "Jemand hat das Bewusstsein verloren.",
+            "sudden_loc_proceed": "Jemand hat das Bewusstsein verloren!"
         },
         "en": {
             "start_emergency": "Are you in an emergency situation?",
@@ -76,12 +97,14 @@
                 {
                     "txt_id": "yes",
                     "next": "es_called_unconscious",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "consciousness_yes"
                 },
                 {
                     "txt_id": "no",
                     "next": "urgency_info",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "consciousness_no"
                 }
             ]
         },
@@ -91,17 +114,20 @@
                 {
                     "txt_id": "yes",
                     "next": "unconsciousness_number",
-                    "connotation": "positive"
+                    "connotation": "positive",
+                    "hint": "es_called_yes"
                 },
                 {
                     "txt_id": "no",
                     "next": "es_call_request_unconscious",
-                    "connotation": "negative"
+                    "connotation": "negative",
+                    "hint": "es_called_no"
                 },
                 {
                     "txt_id": "unsure",
                     "next": "es_call_request_unconscious",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "es_called_unsure"
                 }
             ]
         },
@@ -115,12 +141,14 @@
                 {
                     "txt_id": "single",
                     "next": "airway",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "unconsciousness_number_single"
                 },
                 {
                     "txt_id": "multiple",
                     "next": "airway",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "unconsciousness_number_multiple"
                 }
             ]
         },
@@ -130,7 +158,8 @@
                 {
                     "txt_id": "proceed",
                     "next": "breathing",
-                    "connotation": "positive"
+                    "connotation": "positive",
+                    "hint": "airway_proceed"
                 }
             ]
         },
@@ -140,12 +169,14 @@
                 {
                     "txt_id": "yes",
                     "next": "stable_position",
-                    "connotation": "positive"
+                    "connotation": "positive",
+                    "hint": "breathing_yes"
                 },
                 {
                     "txt_id": "no",
                     "next": "initiate_cpr",
-                    "connotation": "negative"
+                    "connotation": "negative",
+                    "hint": "breathing_no"
                 }
             ]
         },
@@ -159,7 +190,8 @@
                 {
                     "txt_id": "proceed",
                     "next": "other_people_conscious",
-                    "connotation": "positive"
+                    "connotation": "positive",
+                    "hint": "stable_position_proceed"
                 }
             ]
         },
@@ -169,12 +201,14 @@
                 {
                     "txt_id": "yes",
                     "next": "situation",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "other_people_conscious_yes"
                 },
                 {
                     "txt_id": "no",
                     "next": "calming_statement",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "other_people_conscious_no"
                 }
             ]
         },
@@ -184,7 +218,8 @@
                 {
                     "txt_id": "proceed",
                     "next": "es_called_conscious",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "urgency_info_proceed"
                 }
             ]
         },
@@ -194,17 +229,20 @@
                 {
                     "txt_id": "yes",
                     "next": "situation",
-                    "connotation": "positive"
+                    "connotation": "positive",
+                    "hint": "es_called_yes"
                 },
                 {
                     "txt_id": "no",
                     "next": "es_call_request_conscious",
-                    "connotation": "negative"
+                    "connotation": "negative",
+                    "hint": "es_called_no"
                 },
                 {
                     "txt_id": "unsure",
                     "next": "es_call_request_conscious",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "es_called_unsure"
                 }
             ]
         },
@@ -214,7 +252,8 @@
                 {
                     "txt_id": "proceed",
                     "next": "situation",
-                    "connotation": "positive"
+                    "connotation": "positive",
+                    "hint": "es_call_request_proceed"
                 }
             ]
         },
@@ -224,12 +263,14 @@
                 {
                     "txt_id": "accident",
                     "next": "number_affected",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "situation_accident"
                 },
                 {
                     "txt_id": "sickness",
                     "next": "number_affected",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "situation_sickness"
                 }
             ]
         },
@@ -239,17 +280,20 @@
                 {
                     "txt_id": "me",
                     "next": "calming_statement_self",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "number_affected_me"
                 },
                 {
                     "txt_id": "someone_else",
                     "next": "calming_statement",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "number_affected_someone_else"
                 },
                 {
                     "txt_id": "several_others",
                     "next": "calming_statement",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "number_affected_several"
                 }
             ]
         },
@@ -263,7 +307,8 @@
                 {
                     "txt_id": "proceed",
                     "next": "es_called_unconscious",
-                    "connotation": "neutral"
+                    "connotation": "neutral",
+                    "hint": "sudden_loc_proceed"
                 }
             ]
         }
