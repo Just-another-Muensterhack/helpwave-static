@@ -53,7 +53,11 @@
             "unconsciousness_number": "Wie viele Personen sind bewusstlos und/oder antworten nicht mehr auf Ansprache?",
             "unsure": "Ich bin mir nicht sicher.",
             "sudden_loc": "Jemand hat das Bewusstsein verloren.",
-            "sudden_loc_proceed": "Jemand hat das Bewusstsein verloren!"
+            "sudden_loc_proceed": "Jemand hat das Bewusstsein verloren!",
+            "something_changed": "Was hat sich geändert?",
+            "sudden_stop_breathing": "Eine bewusstlose Person hat aufgehört zu atmen.",
+            "gain_consciousness": "Jemand ist wieder bei Bewusstsein",
+            "another_person": "Eine weitere Person hat ein Problem"
         },
         "en": {
             "start_emergency": "Are you in an emergency situation?",
@@ -107,8 +111,12 @@
             "proceed": "Proceed",
             "unconsciousness_number": "How many people are unconscious and/or not responding to calls?",
             "unsure": "I'm not sure.",
-            "sudden_loc": "Someone has lost consciousness.",
-            "sudden_loc_proceed": "Someone has lost consciousness!"
+            "sudden_loc": "Someone lost consciousness.",
+            "sudden_loc_proceed": "Someone has lost consciousness!",
+            "something_changed": "What has changed?",
+            "sudden_stop_breathing": "An unconscious person stopped breathing.",
+            "gain_consciousness": "Someone has regained consciousness.",
+            "another_person": "Another person has a problem."
         }
     },
     "nodes": {
@@ -119,13 +127,19 @@
                     "txt_id": "yes",
                     "next": "es_called_unconscious",
                     "connotation": "neutral",
-                    "hint": "consciousness_yes"
+                    "hint": "consciousness_yes",
+                    "state_changes": {
+                        "consciousness": false
+                    }
                 },
                 {
                     "txt_id": "no",
                     "next": "urgency_info",
                     "connotation": "neutral",
-                    "hint": "consciousness_no"
+                    "hint": "consciousness_no",
+                    "state_changes": {
+                        "consciousness": true
+                    }
                 }
             ]
         },
@@ -163,13 +177,19 @@
                     "txt_id": "single",
                     "next": "airway",
                     "connotation": "neutral",
-                    "hint": "unconsciousness_number_single"
+                    "hint": "unconsciousness_number_single",
+                    "state_changes": {
+                        "no_unconscious": "single"
+                    }
                 },
                 {
                     "txt_id": "multiple",
                     "next": "airway",
                     "connotation": "neutral",
-                    "hint": "unconsciousness_number_multiple"
+                    "hint": "unconsciousness_number_multiple",
+                    "state_changes": {
+                        "no_unconscious": "multiple"
+                    }
                 }
             ]
         },
@@ -191,19 +211,34 @@
                     "txt_id": "yes",
                     "next": "stable_position",
                     "connotation": "positive",
-                    "hint": "breathing_yes"
+                    "hint": "breathing_yes",
+                    "state_changes": {
+                        "breathing": true
+                    }
                 },
                 {
                     "txt_id": "no",
                     "next": "initiate_cpr",
                     "connotation": "negative",
-                    "hint": "breathing_no"
+                    "hint": "breathing_no",
+                    "state_changes": {
+                        "breathing": false
+                    }
                 }
             ]
         },
         "initiate_cpr": {
             "txt_id": "initiate_cpr",
-            "responses": []
+            "responses": [
+                {
+                    "txt_id": "begin_cpr",
+                    "next": "cpr",
+                    "connotation": "neutral",
+                    "state_changes": {
+                        "cpr": true
+                    }
+                }
+            ]
         },
         "stable_position": {
             "txt_id": "stable_position",
@@ -322,14 +357,40 @@
             "txt_id": "calming_statement",
             "responses": []
         },
-        "sudden_loc": {
-            "txt_id": "sudden_loc",
+        "something_changed": {
+            "txt_id": "something_changed",
             "responses": [
                 {
-                    "txt_id": "proceed",
-                    "next": "es_called_unconscious",
+                    "txt_id": "sudden_loc",
+                    "next": "airway",
                     "connotation": "neutral",
-                    "hint": "sudden_loc_proceed"
+                    "state_changes": {
+                        "consciousness": false
+                    }
+                },
+                {
+                    "txt_id": "sudden_stop_breathing",
+                    "next": "initiate_cpr",
+                    "connotation": "neutral",
+                    "state_changes": {
+                        "breathing": false
+                    }
+                },
+                {
+                    "txt_id": "gain_consciousness",
+                    "next": "calming_statement",
+                    "connotation": "neutral",
+                    "state_changes": {
+                        "consciousness": true
+                    }
+                },
+                {
+                    "txt_id": "another_person",
+                    "next": "situation",
+                    "connotation": "neutral",
+                    "state_changes": {
+                        "no_affected": true
+                    }
                 }
             ]
         }
